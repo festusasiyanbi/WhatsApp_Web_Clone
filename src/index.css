@@ -1,13 +1,122 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+*::selection {
+  @apply bg-gray-100 text-textblack
+}
+::-webkit-scrollbar {
+  width: 0.5rem; /* Adjust the width to your preference */
+  background: transparent; /* Set the background to match your page */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Hide scrollbar track */
+::-webkit-scrollbar-track {
+  background: inherit; /* Set the background to match your page */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: none;
+  background-color: white;
+}
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: #ddd;
+  font-family: Arial, Roboto, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 400;
+  @apply bg-[#edfaf7]
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input {
+  @apply bg-light
+}
+html a {
+  @apply no-underline
+}
+
+.chat-wrapper {
+  background-image: url(/public/asset/images/whatsapp-bg.png);
+  background-size: cover;
+  background-size: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+svg, .svg {
+  font-size: larger;
+  color: rgb(174, 186, 193);
+  cursor: pointer;
+}
+
+.text-light {
+  font-size: 14px;
+  color: rgb(75, 96, 108)
+}
+
+.toggle-div span, .toggle-div label {
+  background-color: rgb(75, 96, 108. 0.3);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  padding-left: 1.25rem;
+}
+.toggle-div {
+  background-color: rgb(75, 96, 108);
+}
+
+.login-container {
+  box-shadow: 0 17px 50px 0 rgb(0 0 0 / 19%), 0 12px 15px 0 rgb(0 0 0 / 24%);
+}
+
+.auth-form {
+  outline: 0.5px solid  rgb(65 165 157 / var(--tw-bg-opacity));
+}
+.auth-form button {
+  background-color:  rgb(15, 127, 114)
+}
+.owner {
+  @apply flex items-end justify-end 
+}
+.owner > div:first-child {
+  max-width: 70%;
+  color: rgb(17, 27, 33);
+  background-color: #dcf8c6;
+}
+.delete-modal button {
+  @apply h-[40px] w-[120px] border-gray-300 border-[0.4px] text-green rounded-[36px] 
+}
+
+.timestamp {
+  color: gray;
+  font-size: 10px;
+  text-align: left;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.rotate-btn {
+  transform: rotate(-45deg);
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
 }
